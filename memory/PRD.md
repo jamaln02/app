@@ -2,63 +2,45 @@
 ## Product Requirements Document
 
 ### Original Problem Statement
-Create an elegant "Coming Soon" page for Rouh Perfume brand with luxury modern design that is attention-grabbing.
+Create an elegant "Coming Soon" page for Rouh Perfume brand with luxury modern design matching the reference website colors.
 
 ### Brand Identity
 - **Colors**: 
-  - Primary Black: #000000
-  - Deep Maroon: #2b0c10
+  - Background: Dark (#1a0a0e, #2b0c10, #0a0506)
   - Gold/Bronze: #bb8d4f
-  - Cream/Light Beige: #efcfa6
+  - Cream/Light: #efcfa6
 - **Typography**: Cairo font (Arabic & Latin)
 - **Style**: Luxury, elegant, modern, sophisticated
 
-### User Requirements (Final)
-1. ✅ Light and elegant design (not dark/dim)
-2. ✅ Real Rouh logo (PNG format)
-3. ✅ NO countdown timer
-4. ✅ Social media links:
-   - Instagram: https://www.instagram.com/rouh_.perfume
-   - Facebook: https://www.facebook.com/share/1HrwhH9tyU/
-   - WhatsApp: +963 933 898 625
-5. ✅ Bilingual (Arabic & English with RTL support)
-6. ✅ Attention-grabbing luxury design
+### Final Implementation (Dec 2025)
+**Design - Final Dark Elegant Version:**
+- ✅ Dark background matching reference site (https://rouh-perfume.lovable.app/)
+- ✅ Transparent logo PNG with glow effects
+- ✅ Golden text (#bb8d4f) on dark background
+- ✅ Maroon elements (#2b0c10) integrated
+- ✅ Floating logo animation
+- ✅ Social media icons (Instagram, Facebook, WhatsApp)
+- ✅ Golden WhatsApp CTA button
+- ✅ Language toggle (AR/EN) with RTL support
+- ✅ Subtle animated background orbs
+- ✅ Elegant decorative separators
+- ✅ Responsive design
 
-### What's Been Implemented (Dec 2025)
-**Design Iteration 3 - Final with Fixes:**
-- ✅ Light cream background with maroon and golden accents
-- ✅ Real Rouh logo with transparent background (mix-blend-mode)
-- ✅ Maroon color (#2b0c10) integrated throughout design
-- ✅ Improved text spacing and line-height (leading-loose)
-- ✅ Better margins between sections for clarity
-- ✅ Luxury gradient text with maroon-gold combination
-- ✅ Social media icons with maroon hover effects
-- ✅ WhatsApp contact button with gradient hover
-- ✅ Language toggle (AR/EN) with smooth transitions
-- ✅ Floating animations and effects
-- ✅ Responsive design for all devices
+### Social Media Integration
+- Instagram: https://www.instagram.com/rouh_.perfume
+- Facebook: https://www.facebook.com/share/1HrwhH9tyU/
+- WhatsApp: +963 933 898 625
+
+### Design Features
+1. **Dark Luxury Theme**: Matching reference website aesthetic
+2. **Logo**: Transparent PNG with golden glow effect
+3. **Typography**: Large golden text with shadow effects
+4. **Animations**: Floating logo, fade-in effects
+5. **Bilingual**: Arabic/English with smooth toggle
+6. **CTA**: Prominent golden WhatsApp button
 
 ### Architecture
 **Frontend**: React with Tailwind CSS
 **Components**: Shadcn/UI
 **Styling**: Custom animations + Tailwind + Cairo font
-**Assets**: Real brand logo (PNG)
-
-### Social Media Integration
-- Instagram: Working link to @rouh_.perfume
-- Facebook: Working link to brand page
-- WhatsApp: Direct chat link with +963 933 898 625
-
-### Design Features
-1. **Light Luxury Theme**: Cream background with golden gradient accents
-2. **Logo**: Real Rouh logo with glow effect and floating animation
-3. **Typography**: Large golden gradient text with shadow effects
-4. **Animations**: Floating orbs, fade-in effects, hover transformations
-5. **Bilingual**: Seamless Arabic/English toggle with RTL support
-6. **Call-to-Action**: Prominent WhatsApp contact button
-
-### Next Tasks
-- Review final design with client
-- Deploy to production domain
-- Optional: Add analytics tracking
-- Optional: Add custom domain favicon
+**Assets**: Transparent logo PNG

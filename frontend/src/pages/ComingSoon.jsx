@@ -10,15 +10,13 @@ const ComingSoon = () => {
       comingSoon: 'قريباً',
       subtitle: 'عالم من العطور الفاخرة',
       description: 'نحن نعمل على إطلاق تجربة استثنائية في عالم العطور الفاخرة. عطور تحكي قصة روحك وتعكس أناقتك وتميزك.',
-      stayConnected: 'تواصل معنا',
-      contact: 'للتواصل'
+      stayConnected: 'تواصل معنا'
     },
     en: {
       comingSoon: 'Coming Soon',
       subtitle: 'A World of Luxury Fragrances',
       description: 'We are crafting an extraordinary experience in the world of luxury perfumes. Fragrances that tell your soul\'s story and reflect your elegance and uniqueness.',
-      stayConnected: 'Stay Connected',
-      contact: 'Contact Us'
+      stayConnected: 'Stay Connected'
     }
   };
 
@@ -27,28 +25,17 @@ const ComingSoon = () => {
 
   return (
     <div className={`min-h-screen relative overflow-hidden ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Elegant Light Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#fdfbf7] via-[#efcfa6]/20 to-[#fdfbf7]">
-        {/* Floating Orbs */}
-        <div className="absolute top-20 right-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#bb8d4f]/20 to-[#efcfa6]/30 blur-[100px] animate-float"></div>
-        <div className="absolute bottom-20 left-20 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-[#efcfa6]/30 to-[#bb8d4f]/20 blur-[100px] animate-float-delayed"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#bb8d4f]/10 blur-[120px] animate-pulse"></div>
+      {/* Dark Elegant Background matching reference site */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1a0a0e] via-[#2b0c10] to-[#0a0506]">
+        {/* Subtle animated orbs */}
+        <div className="absolute top-20 right-20 w-[600px] h-[600px] rounded-full bg-[#bb8d4f]/10 blur-[120px] animate-float"></div>
+        <div className="absolute bottom-20 left-20 w-[500px] h-[500px] rounded-full bg-[#2b0c10]/40 blur-[100px] animate-float-delayed"></div>
         
-        {/* Elegant Pattern Overlay */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="elegant-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                <circle cx="30" cy="30" r="1" fill="#bb8d4f"/>
-                <circle cx="0" cy="0" r="1" fill="#bb8d4f"/>
-                <circle cx="60" cy="0" r="1" fill="#bb8d4f"/>
-                <circle cx="0" cy="60" r="1" fill="#bb8d4f"/>
-                <circle cx="60" cy="60" r="1" fill="#bb8d4f"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#elegant-pattern)" />
-          </svg>
-        </div>
+        {/* Subtle texture overlay */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, #bb8d4f 1px, transparent 0)',
+          backgroundSize: '40px 40px'
+        }}></div>
       </div>
 
       {/* Language Toggle */}
@@ -56,7 +43,7 @@ const ComingSoon = () => {
         <Button
           onClick={() => setLanguage(language === 'ar' ? 'en' : 'ar')}
           variant="outline"
-          className="bg-white/80 backdrop-blur-sm border-[#bb8d4f] text-[#2b0c10] hover:bg-[#bb8d4f] hover:text-white hover:border-[#bb8d4f] transition-all duration-500 font-cairo font-semibold px-6 py-2 rounded-full shadow-lg hover:shadow-[#bb8d4f]/50 hover:scale-110"
+          className="bg-[#2b0c10]/80 backdrop-blur-sm border-[#bb8d4f] text-[#bb8d4f] hover:bg-[#bb8d4f] hover:text-[#1a0a0e] hover:border-[#bb8d4f] transition-all duration-500 font-cairo font-semibold px-6 py-2 rounded-full shadow-lg hover:shadow-[#bb8d4f]/50 hover:scale-110"
         >
           {language === 'ar' ? 'EN' : 'العربية'}
         </Button>
@@ -65,121 +52,110 @@ const ComingSoon = () => {
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-12">
         
-        {/* Logo */}
-        <div className="mb-20 animate-fadeIn">
+        {/* Logo with transparent background */}
+        <div className="mb-16 animate-fadeIn">
           <div className="relative flex justify-center">
-            <div className="relative logo-container">
-              {/* Glow Effect Behind Logo */}
-              <div className="absolute inset-0 blur-[50px] opacity-40">
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_rouh-opening/artifacts/xeqy29fd_logos-1.png"
-                  alt="Rouh Glow" 
-                  className="w-64 h-64 md:w-80 md:h-80 object-contain logo-transparent"
-                />
-              </div>
-              {/* Actual Logo with transparent background */}
+            {/* Glow effect */}
+            <div className="absolute inset-0 blur-[60px] opacity-30">
               <img 
-                src="https://customer-assets.emergentagent.com/job_rouh-opening/artifacts/xeqy29fd_logos-1.png"
-                alt="Rouh Perfume Logo" 
-                className="relative w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl animate-float logo-transparent"
+                src="https://customer-assets.emergentagent.com/job_rouh-opening/artifacts/edg3av89_logos-1-removebg-preview.png"
+                alt="Rouh Glow" 
+                className="w-56 h-56 md:w-72 md:h-72 object-contain mx-auto"
               />
             </div>
+            {/* Main logo */}
+            <img 
+              src="https://customer-assets.emergentagent.com/job_rouh-opening/artifacts/edg3av89_logos-1-removebg-preview.png"
+              alt="Rouh Perfume Logo" 
+              className="relative w-56 h-56 md:w-72 md:h-72 object-contain drop-shadow-2xl animate-float"
+            />
           </div>
         </div>
 
         {/* Coming Soon Text */}
-        <div className="text-center mb-16 animate-slideUp px-6">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-10 font-cairo tracking-wide leading-tight" style={{
-            background: 'linear-gradient(135deg, #2b0c10 0%, #bb8d4f 50%, #2b0c10 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            filter: 'drop-shadow(0 4px 12px rgba(43, 12, 16, 0.25))'
+        <div className="text-center mb-12 animate-slideUp px-6">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 font-cairo tracking-wide leading-tight text-[#bb8d4f]" style={{
+            textShadow: '0 0 40px rgba(187, 141, 79, 0.4), 0 4px 20px rgba(0, 0, 0, 0.8)'
           }}>
             {t.comingSoon}
           </h1>
           
-          <div className="relative inline-block mb-10">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl mb-3 font-cairo font-light text-[#2b0c10] leading-relaxed">
+          <div className="relative inline-block mb-8">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl mb-3 font-cairo font-light text-[#efcfa6] leading-relaxed">
               {t.subtitle}
             </h2>
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-[#2b0c10] to-transparent"></div>
+            <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-[#bb8d4f] to-transparent"></div>
           </div>
           
-          <p className="text-[#2b0c10]/80 text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto font-cairo leading-loose px-6">
+          <p className="text-[#efcfa6]/90 text-base md:text-lg lg:text-xl max-w-2xl mx-auto font-cairo leading-loose px-6">
             {t.description}
           </p>
         </div>
 
         {/* Decorative Separator */}
-        <div className="mb-16 flex items-center justify-center gap-4 animate-fadeIn" style={{ animationDelay: '0.3s' }}>
-          <div className="w-24 h-px bg-gradient-to-r from-transparent to-[#2b0c10]"></div>
-          <div className="w-2 h-2 rounded-full bg-[#2b0c10]"></div>
-          <div className="w-3 h-3 rounded-full bg-[#bb8d4f]"></div>
-          <div className="w-2 h-2 rounded-full bg-[#2b0c10]"></div>
-          <div className="w-24 h-px bg-gradient-to-l from-transparent to-[#2b0c10]"></div>
+        <div className="mb-12 flex items-center justify-center gap-3 animate-fadeIn" style={{ animationDelay: '0.3s' }}>
+          <div className="w-20 h-px bg-gradient-to-r from-transparent to-[#bb8d4f]/60"></div>
+          <div className="w-1.5 h-1.5 rounded-full bg-[#bb8d4f]/60"></div>
+          <div className="w-2 h-2 rounded-full bg-[#bb8d4f]"></div>
+          <div className="w-1.5 h-1.5 rounded-full bg-[#bb8d4f]/60"></div>
+          <div className="w-20 h-px bg-gradient-to-l from-transparent to-[#bb8d4f]/60"></div>
         </div>
 
         {/* Contact & Social Media */}
-        <div className="animate-fadeIn mb-16" style={{ animationDelay: '0.6s' }}>
-          <p className="text-[#2b0c10] text-xl md:text-2xl mb-10 font-cairo font-semibold">
+        <div className="animate-fadeIn mb-12" style={{ animationDelay: '0.6s' }}>
+          <p className="text-[#bb8d4f] text-lg md:text-xl mb-8 font-cairo font-semibold">
             {t.stayConnected}
           </p>
           
-          <div className="flex gap-6 justify-center flex-wrap mb-12">
+          <div className="flex gap-5 justify-center flex-wrap mb-10">
             <a
               href="https://www.instagram.com/rouh_.perfume"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-5 rounded-2xl bg-white/90 backdrop-blur-sm border-2 border-[#2b0c10]/30 hover:border-[#2b0c10] hover:bg-gradient-to-br hover:from-[#2b0c10] hover:to-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#2b0c10]/40 hover:scale-110 transform"
+              className="group relative p-4 rounded-xl bg-[#2b0c10]/60 backdrop-blur-sm border border-[#bb8d4f]/30 hover:border-[#bb8d4f] hover:bg-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
               aria-label="Instagram"
             >
-              <Instagram className="w-7 h-7 text-[#2b0c10] group-hover:text-white transition-colors duration-500" />
+              <Instagram className="w-6 h-6 text-[#bb8d4f] group-hover:text-[#1a0a0e] transition-colors duration-500" />
             </a>
             
             <a
               href="https://www.facebook.com/share/1HrwhH9tyU/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-5 rounded-2xl bg-white/90 backdrop-blur-sm border-2 border-[#2b0c10]/30 hover:border-[#2b0c10] hover:bg-gradient-to-br hover:from-[#2b0c10] hover:to-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#2b0c10]/40 hover:scale-110 transform"
+              className="group relative p-4 rounded-xl bg-[#2b0c10]/60 backdrop-blur-sm border border-[#bb8d4f]/30 hover:border-[#bb8d4f] hover:bg-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
               aria-label="Facebook"
             >
-              <Facebook className="w-7 h-7 text-[#2b0c10] group-hover:text-white transition-colors duration-500" />
+              <Facebook className="w-6 h-6 text-[#bb8d4f] group-hover:text-[#1a0a0e] transition-colors duration-500" />
             </a>
             
             <a
               href="https://wa.me/963933898625"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-5 rounded-2xl bg-white/90 backdrop-blur-sm border-2 border-[#2b0c10]/30 hover:border-[#2b0c10] hover:bg-gradient-to-br hover:from-[#2b0c10] hover:to-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#2b0c10]/40 hover:scale-110 transform"
+              className="group relative p-4 rounded-xl bg-[#2b0c10]/60 backdrop-blur-sm border border-[#bb8d4f]/30 hover:border-[#bb8d4f] hover:bg-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
               aria-label="WhatsApp"
             >
-              <MessageCircle className="w-7 h-7 text-[#2b0c10] group-hover:text-white transition-colors duration-500" />
+              <MessageCircle className="w-6 h-6 text-[#bb8d4f] group-hover:text-[#1a0a0e] transition-colors duration-500" />
             </a>
           </div>
           
           {/* WhatsApp Number Display */}
-          <div className="mt-10">
+          <div>
             <a 
               href="https://wa.me/963933898625"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white/90 backdrop-blur-sm border-2 border-[#2b0c10] text-[#2b0c10] font-cairo font-semibold hover:bg-gradient-to-r hover:from-[#2b0c10] hover:to-[#bb8d4f] hover:text-white transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-[#2b0c10]/50 hover:scale-105 transform"
+              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#bb8d4f] text-[#1a0a0e] font-cairo font-bold hover:bg-[#d4a574] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/60 hover:scale-105 transform"
             >
-              <MessageCircle className="w-6 h-6" />
-              <span className="text-lg md:text-xl" dir="ltr">+963 933 898 625</span>
+              <MessageCircle className="w-5 h-5" />
+              <span className="text-base md:text-lg" dir="ltr">+963 933 898 625</span>
             </a>
           </div>
         </div>
 
         {/* Brand Name */}
-        <div className="mt-20 animate-fadeIn" style={{ animationDelay: '0.9s' }}>
-          <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold font-cairo tracking-[0.2em] leading-tight" style={{
-            background: 'linear-gradient(135deg, #2b0c10 0%, #bb8d4f 50%, #2b0c10 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
-          }}>
+        <div className="mt-16 animate-fadeIn" style={{ animationDelay: '0.9s' }}>
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold font-cairo tracking-[0.3em] leading-tight text-[#bb8d4f]/80">
             {language === 'ar' ? 'روح' : 'ROUH'}
           </h3>
         </div>
@@ -187,17 +163,6 @@ const ComingSoon = () => {
 
       {/* Custom Animations */}
       <style>{`
-        /* Make logo background transparent */
-        .logo-transparent {
-          mix-blend-mode: multiply;
-        }
-        
-        @supports (backdrop-filter: blur(10px)) {
-          .logo-container {
-            isolation: isolate;
-          }
-        }
-
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -212,7 +177,7 @@ const ComingSoon = () => {
         @keyframes slideUp {
           from {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(30px);
           }
           to {
             opacity: 1;
@@ -222,16 +187,10 @@ const ComingSoon = () => {
 
         @keyframes float {
           0%, 100% {
-            transform: translateY(0px) translateX(0px);
-          }
-          25% {
-            transform: translateY(-10px) translateX(5px);
+            transform: translateY(0px);
           }
           50% {
-            transform: translateY(-5px) translateX(-5px);
-          }
-          75% {
-            transform: translateY(-15px) translateX(3px);
+            transform: translateY(-15px);
           }
         }
 
@@ -239,16 +198,13 @@ const ComingSoon = () => {
           0%, 100% {
             transform: translateY(0px) translateX(0px);
           }
-          33% {
-            transform: translateY(10px) translateX(-5px);
-          }
-          66% {
-            transform: translateY(5px) translateX(5px);
+          50% {
+            transform: translateY(10px) translateX(-10px);
           }
         }
 
         .animate-fadeIn {
-          animation: fadeIn 1s ease-out forwards;
+          animation: fadeIn 1.2s ease-out forwards;
         }
 
         .animate-slideUp {
@@ -256,11 +212,11 @@ const ComingSoon = () => {
         }
 
         .animate-float {
-          animation: float 20s ease-in-out infinite;
+          animation: float 8s ease-in-out infinite;
         }
 
         .animate-float-delayed {
-          animation: float-delayed 25s ease-in-out infinite;
+          animation: float-delayed 15s ease-in-out infinite;
         }
 
         /* Smooth transitions */
