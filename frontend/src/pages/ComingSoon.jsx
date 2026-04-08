@@ -60,14 +60,14 @@ const ComingSoon = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_rouh-opening/artifacts/edg3av89_logos-1-removebg-preview.png"
                 alt="Rouh Glow" 
-                className="w-56 h-56 md:w-72 md:h-72 object-contain mx-auto"
+                className="w-72 h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain mx-auto"
               />
             </div>
             {/* Main logo */}
             <img 
               src="https://customer-assets.emergentagent.com/job_rouh-opening/artifacts/edg3av89_logos-1-removebg-preview.png"
               alt="Rouh Perfume Logo" 
-              className="relative w-56 h-56 md:w-72 md:h-72 object-contain drop-shadow-2xl animate-float"
+              className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain drop-shadow-2xl animate-float"
             />
           </div>
         </div>
