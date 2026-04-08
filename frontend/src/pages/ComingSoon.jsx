@@ -25,14 +25,14 @@ const ComingSoon = () => {
 
   return (
     <div className={`min-h-screen relative overflow-hidden ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Dark Elegant Background matching reference site */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1a0a0e] via-[#2b0c10] to-[#0a0506]">
-        {/* Subtle animated orbs */}
-        <div className="absolute top-20 right-20 w-[600px] h-[600px] rounded-full bg-[#bb8d4f]/10 blur-[120px] animate-float"></div>
-        <div className="absolute bottom-20 left-20 w-[500px] h-[500px] rounded-full bg-[#2b0c10]/40 blur-[100px] animate-float-delayed"></div>
+      {/* Elegant Cream Background with Gold & Maroon */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#fdfbf7] via-[#f5ede3] to-[#efcfa6]/40">
+        {/* Animated orbs - Gold & Maroon */}
+        <div className="absolute top-20 right-20 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#bb8d4f]/20 to-[#efcfa6]/30 blur-[120px] animate-float"></div>
+        <div className="absolute bottom-20 left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-[#2b0c10]/15 to-[#bb8d4f]/20 blur-[100px] animate-float-delayed"></div>
         
         {/* Subtle texture overlay */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
+        <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, #bb8d4f 1px, transparent 0)',
           backgroundSize: '40px 40px'
         }}></div>
@@ -43,7 +43,7 @@ const ComingSoon = () => {
         <Button
           onClick={() => setLanguage(language === 'ar' ? 'en' : 'ar')}
           variant="outline"
-          className="bg-[#2b0c10]/80 backdrop-blur-sm border-[#bb8d4f] text-[#bb8d4f] hover:bg-[#bb8d4f] hover:text-[#1a0a0e] hover:border-[#bb8d4f] transition-all duration-500 font-cairo font-semibold px-6 py-2 rounded-full shadow-lg hover:shadow-[#bb8d4f]/50 hover:scale-110"
+          className="bg-white/90 backdrop-blur-sm border-[#bb8d4f] text-[#2b0c10] hover:bg-[#bb8d4f] hover:text-white hover:border-[#bb8d4f] transition-all duration-500 font-cairo font-semibold px-6 py-2 rounded-full shadow-lg hover:shadow-[#bb8d4f]/50 hover:scale-110"
         >
           {language === 'ar' ? 'EN' : 'العربية'}
         </Button>
@@ -74,20 +74,24 @@ const ComingSoon = () => {
 
         {/* Coming Soon Text */}
         <div className="text-center mb-12 animate-slideUp px-6">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 font-cairo tracking-wide leading-tight text-[#bb8d4f]" style={{
-            textShadow: '0 0 40px rgba(187, 141, 79, 0.4), 0 4px 20px rgba(0, 0, 0, 0.8)'
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 font-cairo tracking-wide leading-tight" style={{
+            background: 'linear-gradient(135deg, #2b0c10 0%, #bb8d4f 50%, #2b0c10 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            filter: 'drop-shadow(0 2px 8px rgba(187, 141, 79, 0.3))'
           }}>
             {t.comingSoon}
           </h1>
           
           <div className="relative inline-block mb-8">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl mb-3 font-cairo font-light text-[#efcfa6] leading-relaxed">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl mb-3 font-cairo font-light text-[#2b0c10] leading-relaxed">
               {t.subtitle}
             </h2>
             <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-[#bb8d4f] to-transparent"></div>
           </div>
           
-          <p className="text-[#efcfa6]/90 text-base md:text-lg lg:text-xl max-w-2xl mx-auto font-cairo leading-loose px-6">
+          <p className="text-[#2b0c10]/80 text-base md:text-lg lg:text-xl max-w-2xl mx-auto font-cairo leading-loose px-6">
             {t.description}
           </p>
         </div>
@@ -103,7 +107,7 @@ const ComingSoon = () => {
 
         {/* Contact & Social Media */}
         <div className="animate-fadeIn mb-12" style={{ animationDelay: '0.6s' }}>
-          <p className="text-[#bb8d4f] text-lg md:text-xl mb-8 font-cairo font-semibold">
+          <p className="text-[#2b0c10] text-lg md:text-xl mb-8 font-cairo font-semibold">
             {t.stayConnected}
           </p>
           
@@ -112,30 +116,30 @@ const ComingSoon = () => {
               href="https://www.instagram.com/rouh_.perfume"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-4 rounded-xl bg-[#2b0c10]/60 backdrop-blur-sm border border-[#bb8d4f]/30 hover:border-[#bb8d4f] hover:bg-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
+              className="group relative p-4 rounded-xl bg-white/80 backdrop-blur-sm border-2 border-[#2b0c10]/30 hover:border-[#bb8d4f] hover:bg-gradient-to-br hover:from-[#2b0c10] hover:to-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
               aria-label="Instagram"
             >
-              <Instagram className="w-6 h-6 text-[#bb8d4f] group-hover:text-[#1a0a0e] transition-colors duration-500" />
+              <Instagram className="w-6 h-6 text-[#2b0c10] group-hover:text-white transition-colors duration-500" />
             </a>
             
             <a
               href="https://www.facebook.com/share/1HrwhH9tyU/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-4 rounded-xl bg-[#2b0c10]/60 backdrop-blur-sm border border-[#bb8d4f]/30 hover:border-[#bb8d4f] hover:bg-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
+              className="group relative p-4 rounded-xl bg-white/80 backdrop-blur-sm border-2 border-[#2b0c10]/30 hover:border-[#bb8d4f] hover:bg-gradient-to-br hover:from-[#2b0c10] hover:to-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
               aria-label="Facebook"
             >
-              <Facebook className="w-6 h-6 text-[#bb8d4f] group-hover:text-[#1a0a0e] transition-colors duration-500" />
+              <Facebook className="w-6 h-6 text-[#2b0c10] group-hover:text-white transition-colors duration-500" />
             </a>
             
             <a
               href="https://wa.me/963933898625"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-4 rounded-xl bg-[#2b0c10]/60 backdrop-blur-sm border border-[#bb8d4f]/30 hover:border-[#bb8d4f] hover:bg-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
+              className="group relative p-4 rounded-xl bg-white/80 backdrop-blur-sm border-2 border-[#2b0c10]/30 hover:border-[#bb8d4f] hover:bg-gradient-to-br hover:from-[#2b0c10] hover:to-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
               aria-label="WhatsApp"
             >
-              <MessageCircle className="w-6 h-6 text-[#bb8d4f] group-hover:text-[#1a0a0e] transition-colors duration-500" />
+              <MessageCircle className="w-6 h-6 text-[#2b0c10] group-hover:text-white transition-colors duration-500" />
             </a>
           </div>
           
@@ -145,7 +149,7 @@ const ComingSoon = () => {
               href="https://wa.me/963933898625"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#bb8d4f] text-[#1a0a0e] font-cairo font-bold hover:bg-[#d4a574] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/60 hover:scale-105 transform"
+              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#2b0c10] to-[#bb8d4f] text-white font-cairo font-bold hover:from-[#bb8d4f] hover:to-[#d4a574] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/60 hover:scale-105 transform"
             >
               <MessageCircle className="w-5 h-5" />
               <span className="text-base md:text-lg" dir="ltr">+963 933 898 625</span>
@@ -155,7 +159,12 @@ const ComingSoon = () => {
 
         {/* Brand Name */}
         <div className="mt-16 animate-fadeIn" style={{ animationDelay: '0.9s' }}>
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold font-cairo tracking-[0.3em] leading-tight text-[#bb8d4f]/80">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold font-cairo tracking-[0.3em] leading-tight" style={{
+            background: 'linear-gradient(135deg, #2b0c10 0%, #bb8d4f 50%, #2b0c10 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
             {language === 'ar' ? 'روح' : 'ROUH'}
           </h3>
         </div>
