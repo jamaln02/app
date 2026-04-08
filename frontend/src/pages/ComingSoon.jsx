@@ -66,116 +66,116 @@ const ComingSoon = () => {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-12">
         
         {/* Logo */}
-        <div className="mb-16 animate-fadeIn">
+        <div className="mb-20 animate-fadeIn">
           <div className="relative flex justify-center">
-            <div className="relative">
+            <div className="relative logo-container">
               {/* Glow Effect Behind Logo */}
-              <div className="absolute inset-0 blur-[40px] opacity-50">
+              <div className="absolute inset-0 blur-[50px] opacity-40">
                 <img 
                   src="https://customer-assets.emergentagent.com/job_rouh-opening/artifacts/xeqy29fd_logos-1.png"
                   alt="Rouh Glow" 
-                  className="w-64 h-64 md:w-80 md:h-80 object-contain"
+                  className="w-64 h-64 md:w-80 md:h-80 object-contain logo-transparent"
                 />
               </div>
-              {/* Actual Logo */}
+              {/* Actual Logo with transparent background */}
               <img 
                 src="https://customer-assets.emergentagent.com/job_rouh-opening/artifacts/xeqy29fd_logos-1.png"
                 alt="Rouh Perfume Logo" 
-                className="relative w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl animate-float"
+                className="relative w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl animate-float logo-transparent"
               />
             </div>
           </div>
         </div>
 
         {/* Coming Soon Text */}
-        <div className="text-center mb-12 animate-slideUp">
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 font-cairo tracking-wide" style={{
-            background: 'linear-gradient(135deg, #bb8d4f 0%, #d4a574 50%, #bb8d4f 100%)',
+        <div className="text-center mb-16 animate-slideUp px-6">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-10 font-cairo tracking-wide leading-tight" style={{
+            background: 'linear-gradient(135deg, #2b0c10 0%, #bb8d4f 50%, #2b0c10 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
-            filter: 'drop-shadow(0 4px 12px rgba(187, 141, 79, 0.3))'
+            filter: 'drop-shadow(0 4px 12px rgba(43, 12, 16, 0.25))'
           }}>
             {t.comingSoon}
           </h1>
           
-          <div className="relative inline-block mb-8">
-            <h2 className="text-3xl md:text-4xl mb-2 font-cairo font-light text-[#2b0c10]">
+          <div className="relative inline-block mb-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl mb-3 font-cairo font-light text-[#2b0c10] leading-relaxed">
               {t.subtitle}
             </h2>
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-[#bb8d4f] to-transparent"></div>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-[#2b0c10] to-transparent"></div>
           </div>
           
-          <p className="text-[#2b0c10]/80 text-lg md:text-xl max-w-3xl mx-auto font-cairo leading-relaxed px-6">
+          <p className="text-[#2b0c10]/80 text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto font-cairo leading-loose px-6">
             {t.description}
           </p>
         </div>
 
         {/* Decorative Separator */}
         <div className="mb-16 flex items-center justify-center gap-4 animate-fadeIn" style={{ animationDelay: '0.3s' }}>
-          <div className="w-24 h-px bg-gradient-to-r from-transparent to-[#bb8d4f]"></div>
-          <div className="w-2 h-2 rounded-full bg-[#bb8d4f]"></div>
+          <div className="w-24 h-px bg-gradient-to-r from-transparent to-[#2b0c10]"></div>
+          <div className="w-2 h-2 rounded-full bg-[#2b0c10]"></div>
           <div className="w-3 h-3 rounded-full bg-[#bb8d4f]"></div>
-          <div className="w-2 h-2 rounded-full bg-[#bb8d4f]"></div>
-          <div className="w-24 h-px bg-gradient-to-l from-transparent to-[#bb8d4f]"></div>
+          <div className="w-2 h-2 rounded-full bg-[#2b0c10]"></div>
+          <div className="w-24 h-px bg-gradient-to-l from-transparent to-[#2b0c10]"></div>
         </div>
 
         {/* Contact & Social Media */}
-        <div className="animate-fadeIn" style={{ animationDelay: '0.6s' }}>
-          <p className="text-[#2b0c10] text-xl mb-8 font-cairo font-semibold">
+        <div className="animate-fadeIn mb-16" style={{ animationDelay: '0.6s' }}>
+          <p className="text-[#2b0c10] text-xl md:text-2xl mb-10 font-cairo font-semibold">
             {t.stayConnected}
           </p>
           
-          <div className="flex gap-6 justify-center flex-wrap">
+          <div className="flex gap-6 justify-center flex-wrap mb-12">
             <a
               href="https://www.instagram.com/rouh_.perfume"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-5 rounded-2xl bg-white/80 backdrop-blur-sm border-2 border-[#bb8d4f]/30 hover:border-[#bb8d4f] hover:bg-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
+              className="group relative p-5 rounded-2xl bg-white/90 backdrop-blur-sm border-2 border-[#2b0c10]/30 hover:border-[#2b0c10] hover:bg-gradient-to-br hover:from-[#2b0c10] hover:to-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#2b0c10]/40 hover:scale-110 transform"
               aria-label="Instagram"
             >
-              <Instagram className="w-7 h-7 text-[#bb8d4f] group-hover:text-white transition-colors duration-500" />
+              <Instagram className="w-7 h-7 text-[#2b0c10] group-hover:text-white transition-colors duration-500" />
             </a>
             
             <a
               href="https://www.facebook.com/share/1HrwhH9tyU/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-5 rounded-2xl bg-white/80 backdrop-blur-sm border-2 border-[#bb8d4f]/30 hover:border-[#bb8d4f] hover:bg-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
+              className="group relative p-5 rounded-2xl bg-white/90 backdrop-blur-sm border-2 border-[#2b0c10]/30 hover:border-[#2b0c10] hover:bg-gradient-to-br hover:from-[#2b0c10] hover:to-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#2b0c10]/40 hover:scale-110 transform"
               aria-label="Facebook"
             >
-              <Facebook className="w-7 h-7 text-[#bb8d4f] group-hover:text-white transition-colors duration-500" />
+              <Facebook className="w-7 h-7 text-[#2b0c10] group-hover:text-white transition-colors duration-500" />
             </a>
             
             <a
               href="https://wa.me/963933898625"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-5 rounded-2xl bg-white/80 backdrop-blur-sm border-2 border-[#bb8d4f]/30 hover:border-[#bb8d4f] hover:bg-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
+              className="group relative p-5 rounded-2xl bg-white/90 backdrop-blur-sm border-2 border-[#2b0c10]/30 hover:border-[#2b0c10] hover:bg-gradient-to-br hover:from-[#2b0c10] hover:to-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#2b0c10]/40 hover:scale-110 transform"
               aria-label="WhatsApp"
             >
-              <MessageCircle className="w-7 h-7 text-[#bb8d4f] group-hover:text-white transition-colors duration-500" />
+              <MessageCircle className="w-7 h-7 text-[#2b0c10] group-hover:text-white transition-colors duration-500" />
             </a>
           </div>
           
           {/* WhatsApp Number Display */}
-          <div className="mt-8">
+          <div className="mt-10">
             <a 
               href="https://wa.me/963933898625"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/80 backdrop-blur-sm border-2 border-[#bb8d4f] text-[#2b0c10] font-cairo font-semibold hover:bg-[#bb8d4f] hover:text-white transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-105 transform"
+              className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white/90 backdrop-blur-sm border-2 border-[#2b0c10] text-[#2b0c10] font-cairo font-semibold hover:bg-gradient-to-r hover:from-[#2b0c10] hover:to-[#bb8d4f] hover:text-white transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-[#2b0c10]/50 hover:scale-105 transform"
             >
-              <MessageCircle className="w-5 h-5" />
-              <span className="text-lg" dir="ltr">+963 933 898 625</span>
+              <MessageCircle className="w-6 h-6" />
+              <span className="text-lg md:text-xl" dir="ltr">+963 933 898 625</span>
             </a>
           </div>
         </div>
 
         {/* Brand Name */}
-        <div className="mt-16 animate-fadeIn" style={{ animationDelay: '0.9s' }}>
-          <h3 className="text-4xl md:text-5xl font-bold font-cairo tracking-[0.2em]" style={{
-            background: 'linear-gradient(135deg, #bb8d4f 0%, #d4a574 50%, #bb8d4f 100%)',
+        <div className="mt-20 animate-fadeIn" style={{ animationDelay: '0.9s' }}>
+          <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold font-cairo tracking-[0.2em] leading-tight" style={{
+            background: 'linear-gradient(135deg, #2b0c10 0%, #bb8d4f 50%, #2b0c10 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text'
@@ -187,6 +187,17 @@ const ComingSoon = () => {
 
       {/* Custom Animations */}
       <style>{`
+        /* Make logo background transparent */
+        .logo-transparent {
+          mix-blend-mode: multiply;
+        }
+        
+        @supports (backdrop-filter: blur(10px)) {
+          .logo-container {
+            isolation: isolate;
+          }
+        }
+
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -255,6 +266,12 @@ const ComingSoon = () => {
         /* Smooth transitions */
         button, a {
           transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Better text rendering */
+        * {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
       `}</style>
     </div>
