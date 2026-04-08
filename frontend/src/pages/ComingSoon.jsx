@@ -1,59 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { Instagram, Facebook, Twitter, Mail, MapPin, Phone } from 'lucide-react';
+import React, { useState } from 'react';
+import { Instagram, Facebook, MessageCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
 
 const ComingSoon = () => {
   const [language, setLanguage] = useState('ar');
-  const [timeLeft, setTimeLeft] = useState({
-    days: 30,
-    hours: 12,
-    minutes: 45,
-    seconds: 30
-  });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        } else if (prev.hours > 0) {
-          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        } else if (prev.days > 0) {
-          return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
-        }
-        return prev;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
 
   const content = {
     ar: {
       comingSoon: 'قريباً',
-      subtitle: 'عالم من العطور الفاخرة في طريقه إليك',
-      description: 'نحن نعمل على شيء استثنائي. عطور فاخرة تحكي قصة روحك وتعكس تميزك.',
-      stayConnected: 'ابقَ على تواصل',
-      followUs: 'تابعنا',
-      days: 'يوم',
-      hours: 'ساعة',
-      minutes: 'دقيقة',
-      seconds: 'ثانية',
-      launching: 'الإطلاق خلال'
+      subtitle: 'عالم من العطور الفاخرة',
+      description: 'نحن نعمل على إطلاق تجربة استثنائية في عالم العطور الفاخرة. عطور تحكي قصة روحك وتعكس أناقتك وتميزك.',
+      stayConnected: 'تواصل معنا',
+      contact: 'للتواصل'
     },
     en: {
       comingSoon: 'Coming Soon',
-      subtitle: 'A World of Luxury Fragrances Awaits You',
-      description: 'We are crafting something extraordinary. Luxury perfumes that tell your soul\'s story and reflect your uniqueness.',
+      subtitle: 'A World of Luxury Fragrances',
+      description: 'We are crafting an extraordinary experience in the world of luxury perfumes. Fragrances that tell your soul\'s story and reflect your elegance and uniqueness.',
       stayConnected: 'Stay Connected',
-      followUs: 'Follow Us',
-      days: 'Days',
-      hours: 'Hours',
-      minutes: 'Minutes',
-      seconds: 'Seconds',
-      launching: 'Launching In'
+      contact: 'Contact Us'
     }
   };
 
@@ -62,23 +27,26 @@ const ComingSoon = () => {
 
   return (
     <div className={`min-h-screen relative overflow-hidden ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Background with Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#000000] via-[#2b0c10] to-[#000000]">
-        {/* Animated Patterns */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-20 left-20 w-96 h-96 rounded-full bg-[#bb8d4f] blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 rounded-full bg-[#efcfa6] blur-[120px] animate-pulse" style={{ animationDelay: '1s' }}></div>
-        </div>
+      {/* Elegant Light Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#fdfbf7] via-[#efcfa6]/20 to-[#fdfbf7]">
+        {/* Floating Orbs */}
+        <div className="absolute top-20 right-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#bb8d4f]/20 to-[#efcfa6]/30 blur-[100px] animate-float"></div>
+        <div className="absolute bottom-20 left-20 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-[#efcfa6]/30 to-[#bb8d4f]/20 blur-[100px] animate-float-delayed"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#bb8d4f]/10 blur-[120px] animate-pulse"></div>
         
-        {/* Wavy Pattern Overlay */}
-        <div className="absolute inset-0 opacity-5">
+        {/* Elegant Pattern Overlay */}
+        <div className="absolute inset-0 opacity-[0.03]">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <pattern id="wave-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-                <path d="M0 50 Q25 25, 50 50 T100 50" stroke="#bb8d4f" strokeWidth="0.5" fill="none"/>
+              <pattern id="elegant-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                <circle cx="30" cy="30" r="1" fill="#bb8d4f"/>
+                <circle cx="0" cy="0" r="1" fill="#bb8d4f"/>
+                <circle cx="60" cy="0" r="1" fill="#bb8d4f"/>
+                <circle cx="0" cy="60" r="1" fill="#bb8d4f"/>
+                <circle cx="60" cy="60" r="1" fill="#bb8d4f"/>
               </pattern>
             </defs>
-            <rect width="100%" height="100%" fill="url(#wave-pattern)" />
+            <rect width="100%" height="100%" fill="url(#elegant-pattern)" />
           </svg>
         </div>
       </div>
@@ -88,9 +56,9 @@ const ComingSoon = () => {
         <Button
           onClick={() => setLanguage(language === 'ar' ? 'en' : 'ar')}
           variant="outline"
-          className="bg-transparent border-[#bb8d4f] text-[#efcfa6] hover:bg-[#bb8d4f] hover:text-[#000000] transition-all duration-300 font-cairo"
+          className="bg-white/80 backdrop-blur-sm border-[#bb8d4f] text-[#2b0c10] hover:bg-[#bb8d4f] hover:text-white hover:border-[#bb8d4f] transition-all duration-500 font-cairo font-semibold px-6 py-2 rounded-full shadow-lg hover:shadow-[#bb8d4f]/50 hover:scale-110"
         >
-          {language === 'ar' ? 'EN' : 'ع'}
+          {language === 'ar' ? 'EN' : 'العربية'}
         </Button>
       </div>
 
@@ -98,112 +66,123 @@ const ComingSoon = () => {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-12">
         
         {/* Logo */}
-        <div className="mb-12 animate-fadeIn">
-          <div className="relative">
-            {/* Stylized Logo with Golden Gradient */}
-            <div className="flex flex-col items-center">
-              <svg width="160" height="120" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-2xl mb-4">
-                <defs>
-                  <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{ stopColor: '#efcfa6', stopOpacity: 1 }} />
-                    <stop offset="50%" style={{ stopColor: '#bb8d4f', stopOpacity: 1 }} />
-                    <stop offset="100%" style={{ stopColor: '#efcfa6', stopOpacity: 1 }} />
-                  </linearGradient>
-                </defs>
-                {/* Abstract flowing shape inspired by luxury perfume bottles */}
-                <path d="M40 80 Q 50 40, 80 30 T 120 80 Q 110 90, 80 95 T 40 80 Z" fill="url(#goldGradient)" opacity="0.9"/>
-                <path d="M60 60 Q 70 35, 80 30 T 100 60 Q 95 70, 80 72 T 60 60 Z" fill="url(#goldGradient)" opacity="0.7"/>
-                <ellipse cx="80" cy="25" rx="8" ry="12" fill="url(#goldGradient)"/>
-              </svg>
-              <h2 className="text-5xl font-bold font-cairo tracking-[0.3em]" style={{
-                background: 'linear-gradient(135deg, #efcfa6 0%, #bb8d4f 50%, #efcfa6 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                textShadow: '0 0 40px rgba(187, 141, 79, 0.3)',
-                letterSpacing: '0.3em'
-              }}>
-                {language === 'ar' ? 'روح' : 'ROUH'}
-              </h2>
+        <div className="mb-16 animate-fadeIn">
+          <div className="relative flex justify-center">
+            <div className="relative">
+              {/* Glow Effect Behind Logo */}
+              <div className="absolute inset-0 blur-[40px] opacity-50">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_rouh-opening/artifacts/xeqy29fd_logos-1.png"
+                  alt="Rouh Glow" 
+                  className="w-64 h-64 md:w-80 md:h-80 object-contain"
+                />
+              </div>
+              {/* Actual Logo */}
+              <img 
+                src="https://customer-assets.emergentagent.com/job_rouh-opening/artifacts/xeqy29fd_logos-1.png"
+                alt="Rouh Perfume Logo" 
+                className="relative w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl animate-float"
+              />
             </div>
           </div>
         </div>
 
         {/* Coming Soon Text */}
-        <div className="text-center mb-8 animate-slideUp">
-          <h1 className={`text-6xl md:text-8xl font-bold mb-6 font-cairo tracking-wider ${isRTL ? 'text-right' : 'text-left'}`} style={{
-            background: 'linear-gradient(135deg, #efcfa6 0%, #bb8d4f 50%, #efcfa6 100%)',
+        <div className="text-center mb-12 animate-slideUp">
+          <h1 className="text-6xl md:text-8xl font-bold mb-8 font-cairo tracking-wide" style={{
+            background: 'linear-gradient(135deg, #bb8d4f 0%, #d4a574 50%, #bb8d4f 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
-            textShadow: '0 0 60px rgba(187, 141, 79, 0.3)'
+            filter: 'drop-shadow(0 4px 12px rgba(187, 141, 79, 0.3))'
           }}>
             {t.comingSoon}
           </h1>
           
-          <p className="text-[#efcfa6] text-2xl md:text-3xl mb-4 font-cairo font-light">
-            {t.subtitle}
-          </p>
+          <div className="relative inline-block mb-8">
+            <h2 className="text-3xl md:text-4xl mb-2 font-cairo font-light text-[#2b0c10]">
+              {t.subtitle}
+            </h2>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-[#bb8d4f] to-transparent"></div>
+          </div>
           
-          <p className="text-[#efcfa6]/80 text-lg md:text-xl max-w-2xl mx-auto font-cairo leading-relaxed">
+          <p className="text-[#2b0c10]/80 text-lg md:text-xl max-w-3xl mx-auto font-cairo leading-relaxed px-6">
             {t.description}
           </p>
         </div>
 
-        {/* Countdown Timer */}
-        <div className="mb-16 animate-fadeIn" style={{ animationDelay: '0.3s' }}>
-          <p className="text-[#bb8d4f] text-sm uppercase tracking-widest mb-6 font-cairo font-semibold">
-            {t.launching}
-          </p>
-          
-          <div className="flex gap-4 md:gap-8">
-            {[
-              { value: timeLeft.days, label: t.days },
-              { value: timeLeft.hours, label: t.hours },
-              { value: timeLeft.minutes, label: t.minutes },
-              { value: timeLeft.seconds, label: t.seconds }
-            ].map((item, index) => (
-              <div 
-                key={index}
-                className="flex flex-col items-center backdrop-blur-md bg-[#2b0c10]/40 rounded-2xl p-6 min-w-[100px] border border-[#bb8d4f]/20 shadow-2xl hover:scale-105 transition-transform duration-300"
-              >
-                <span className="text-5xl md:text-6xl font-bold text-[#bb8d4f] font-cairo mb-2">
-                  {String(item.value).padStart(2, '0')}
-                </span>
-                <span className="text-[#efcfa6] text-sm uppercase tracking-wider font-cairo">
-                  {item.label}
-                </span>
-              </div>
-            ))}
-          </div>
+        {/* Decorative Separator */}
+        <div className="mb-16 flex items-center justify-center gap-4 animate-fadeIn" style={{ animationDelay: '0.3s' }}>
+          <div className="w-24 h-px bg-gradient-to-r from-transparent to-[#bb8d4f]"></div>
+          <div className="w-2 h-2 rounded-full bg-[#bb8d4f]"></div>
+          <div className="w-3 h-3 rounded-full bg-[#bb8d4f]"></div>
+          <div className="w-2 h-2 rounded-full bg-[#bb8d4f]"></div>
+          <div className="w-24 h-px bg-gradient-to-l from-transparent to-[#bb8d4f]"></div>
         </div>
 
-        {/* Social Media Links */}
+        {/* Contact & Social Media */}
         <div className="animate-fadeIn" style={{ animationDelay: '0.6s' }}>
-          <p className="text-[#efcfa6] text-lg mb-6 font-cairo font-semibold">
-            {t.followUs}
+          <p className="text-[#2b0c10] text-xl mb-8 font-cairo font-semibold">
+            {t.stayConnected}
           </p>
           
-          <div className="flex gap-6 justify-center">
-            {[
-              { Icon: Instagram, href: '#', label: 'Instagram' },
-              { Icon: Facebook, href: '#', label: 'Facebook' },
-              { Icon: Twitter, href: '#', label: 'Twitter' }
-            ].map(({ Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                className="group relative p-4 rounded-full backdrop-blur-md bg-[#2b0c10]/40 border border-[#bb8d4f]/20 hover:bg-[#bb8d4f] transition-all duration-300 shadow-lg hover:shadow-[#bb8d4f]/50"
-                aria-label={label}
-              >
-                <Icon className="w-6 h-6 text-[#efcfa6] group-hover:text-[#000000] transition-colors duration-300" />
-              </a>
-            ))}
+          <div className="flex gap-6 justify-center flex-wrap">
+            <a
+              href="https://www.instagram.com/rouh_.perfume"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-5 rounded-2xl bg-white/80 backdrop-blur-sm border-2 border-[#bb8d4f]/30 hover:border-[#bb8d4f] hover:bg-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-7 h-7 text-[#bb8d4f] group-hover:text-white transition-colors duration-500" />
+            </a>
+            
+            <a
+              href="https://www.facebook.com/share/1HrwhH9tyU/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-5 rounded-2xl bg-white/80 backdrop-blur-sm border-2 border-[#bb8d4f]/30 hover:border-[#bb8d4f] hover:bg-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
+              aria-label="Facebook"
+            >
+              <Facebook className="w-7 h-7 text-[#bb8d4f] group-hover:text-white transition-colors duration-500" />
+            </a>
+            
+            <a
+              href="https://wa.me/963933898625"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-5 rounded-2xl bg-white/80 backdrop-blur-sm border-2 border-[#bb8d4f]/30 hover:border-[#bb8d4f] hover:bg-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle className="w-7 h-7 text-[#bb8d4f] group-hover:text-white transition-colors duration-500" />
+            </a>
+          </div>
+          
+          {/* WhatsApp Number Display */}
+          <div className="mt-8">
+            <a 
+              href="https://wa.me/963933898625"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/80 backdrop-blur-sm border-2 border-[#bb8d4f] text-[#2b0c10] font-cairo font-semibold hover:bg-[#bb8d4f] hover:text-white transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-105 transform"
+            >
+              <MessageCircle className="w-5 h-5" />
+              <span className="text-lg" dir="ltr">+963 933 898 625</span>
+            </a>
           </div>
         </div>
 
-        {/* Decorative Bottom Element */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#000000] to-transparent"></div>
+        {/* Brand Name */}
+        <div className="mt-16 animate-fadeIn" style={{ animationDelay: '0.9s' }}>
+          <h3 className="text-4xl md:text-5xl font-bold font-cairo tracking-[0.2em]" style={{
+            background: 'linear-gradient(135deg, #bb8d4f 0%, #d4a574 50%, #bb8d4f 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
+            {language === 'ar' ? 'روح' : 'ROUH'}
+          </h3>
+        </div>
       </div>
 
       {/* Custom Animations */}
@@ -230,6 +209,33 @@ const ComingSoon = () => {
           }
         }
 
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px) translateX(0px);
+          }
+          25% {
+            transform: translateY(-10px) translateX(5px);
+          }
+          50% {
+            transform: translateY(-5px) translateX(-5px);
+          }
+          75% {
+            transform: translateY(-15px) translateX(3px);
+          }
+        }
+
+        @keyframes float-delayed {
+          0%, 100% {
+            transform: translateY(0px) translateX(0px);
+          }
+          33% {
+            transform: translateY(10px) translateX(-5px);
+          }
+          66% {
+            transform: translateY(5px) translateX(5px);
+          }
+        }
+
         .animate-fadeIn {
           animation: fadeIn 1s ease-out forwards;
         }
@@ -238,9 +244,17 @@ const ComingSoon = () => {
           animation: slideUp 1s ease-out forwards;
         }
 
-        /* Smooth transitions for all interactive elements */
+        .animate-float {
+          animation: float 20s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+          animation: float-delayed 25s ease-in-out infinite;
+        }
+
+        /* Smooth transitions */
         button, a {
-          transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
       `}</style>
     </div>

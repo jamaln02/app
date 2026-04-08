@@ -2,7 +2,7 @@
 ## Product Requirements Document
 
 ### Original Problem Statement
-Create an elegant "Coming Soon" page for Rouh Perfume brand that matches the visual identity and feels close to the reference website (https://rouh-perfume.lovable.app/).
+Create an elegant "Coming Soon" page for Rouh Perfume brand with luxury modern design that is attention-grabbing.
 
 ### Brand Identity
 - **Colors**: 
@@ -11,49 +11,55 @@ Create an elegant "Coming Soon" page for Rouh Perfume brand that matches the vis
   - Gold/Bronze: #bb8d4f
   - Cream/Light Beige: #efcfa6
 - **Typography**: Cairo font (Arabic & Latin)
-- **Style**: Luxury, elegant, sophisticated
+- **Style**: Luxury, elegant, modern, sophisticated
 
-### User Requirements (Gathered)
-1. Beautiful subtitle text ✅
-2. Social media links (Instagram, Facebook, Twitter) ✅
-3. Bilingual support (Arabic & English) ✅
-4. Display logo ✅
-5. Frontend only (no backend currently needed) ✅
+### User Requirements (Final)
+1. ✅ Light and elegant design (not dark/dim)
+2. ✅ Real Rouh logo (PNG format)
+3. ✅ NO countdown timer
+4. ✅ Social media links:
+   - Instagram: https://www.instagram.com/rouh_.perfume
+   - Facebook: https://www.facebook.com/share/1HrwhH9tyU/
+   - WhatsApp: +963 933 898 625
+5. ✅ Bilingual (Arabic & English with RTL support)
+6. ✅ Attention-grabbing luxury design
 
 ### What's Been Implemented (Dec 2025)
-- ✅ Luxury coming soon page with brand colors
-- ✅ Animated countdown timer (30 days)
-- ✅ Language toggle (AR/EN) with RTL support
-- ✅ Stylized golden logo with SVG
-- ✅ Social media icons with hover effects
-- ✅ Glass morphism design for countdown cards
-- ✅ Animated background with wavy patterns
+**Design Iteration 2 - Final:**
+- ✅ Light cream background with golden accents
+- ✅ Real Rouh logo with glow effects and floating animation
+- ✅ Luxury gradient text effects
+- ✅ Removed countdown timer as requested
+- ✅ Social media icons (Instagram, Facebook, WhatsApp) with hover effects
+- ✅ WhatsApp contact button with phone number display
+- ✅ Language toggle (AR/EN) with smooth transitions
+- ✅ Floating orb animations in background
+- ✅ Elegant decorative separator
 - ✅ Responsive design for all devices
 - ✅ Cairo font integration
-- ✅ Smooth animations and transitions
+- ✅ Smooth micro-animations and hover effects
 
 ### Architecture
 **Frontend**: React with Tailwind CSS
 **Components**: Shadcn/UI
-**Routing**: React Router
-**Styling**: Custom CSS with Tailwind + Cairo font
+**Styling**: Custom animations + Tailwind + Cairo font
+**Assets**: Real brand logo (PNG)
 
-### Core Features
-1. **Bilingual Support**: Toggle between Arabic and English
-2. **Countdown Timer**: Live countdown showing days, hours, minutes, seconds
-3. **Social Media Integration**: Links ready for Instagram, Facebook, Twitter
-4. **Responsive Design**: Mobile-first approach
-5. **Brand Consistency**: Uses official Rouh color palette and typography
+### Social Media Integration
+- Instagram: Working link to @rouh_.perfume
+- Facebook: Working link to brand page
+- WhatsApp: Direct chat link with +963 933 898 625
 
-### Prioritized Backlog (P1/P2)
-- P1: Add actual social media URLs when available
-- P1: Adjust countdown end date if needed
-- P2: Add email subscription form with backend
-- P2: Add notification system for launch
-- P2: Add analytics tracking
-- P2: Add WhatsApp contact button
+### Design Features
+1. **Light Luxury Theme**: Cream background with golden gradient accents
+2. **Logo**: Real Rouh logo with glow effect and floating animation
+3. **Typography**: Large golden gradient text with shadow effects
+4. **Animations**: Floating orbs, fade-in effects, hover transformations
+5. **Bilingual**: Seamless Arabic/English toggle with RTL support
+6. **Call-to-Action**: Prominent WhatsApp contact button
 
 ### Next Tasks
+- Review final design with client
 - Deploy to production domain
-- Add actual social media links
-- Consider adding email capture functionality if needed
+- Optional: Add analytics tracking
+- Optional: Add custom domain favicon
