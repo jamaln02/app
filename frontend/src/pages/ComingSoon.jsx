@@ -52,28 +52,28 @@ const ComingSoon = () => {
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-12">
         
-        {/* Logo with transparent background */}
-        <div className="mb-16 animate-fadeIn">
+        {/* Logo with transparent background - Larger size */}
+        <div className="mb-6 animate-fadeIn">
           <div className="relative flex justify-center">
             {/* Glow effect */}
             <div className="absolute inset-0 blur-[60px] opacity-30">
               <img 
                 src="https://customer-assets.emergentagent.com/job_rouh-opening/artifacts/edg3av89_logos-1-removebg-preview.png"
                 alt="Rouh Glow" 
-                className="w-72 h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain mx-auto"
+                className="w-80 h-80 md:w-[32rem] md:h-[32rem] lg:w-[36rem] lg:h-[36rem] object-contain mx-auto"
               />
             </div>
             {/* Main logo */}
             <img 
               src="https://customer-assets.emergentagent.com/job_rouh-opening/artifacts/edg3av89_logos-1-removebg-preview.png"
               alt="Rouh Perfume Logo" 
-              className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain drop-shadow-2xl animate-float"
+              className="relative w-80 h-80 md:w-[32rem] md:h-[32rem] lg:w-[36rem] lg:h-[36rem] object-contain drop-shadow-2xl animate-float"
             />
           </div>
         </div>
 
         {/* Coming Soon Text */}
-        <div className="text-center mb-12 animate-slideUp px-6">
+        <div className="text-center mb-10 animate-slideUp px-6">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 font-cairo tracking-wide leading-tight" style={{
             background: 'linear-gradient(135deg, #2b0c10 0%, #bb8d4f 50%, #2b0c10 100%)',
             WebkitBackgroundClip: 'text',
