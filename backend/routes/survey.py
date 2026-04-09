@@ -24,6 +24,7 @@ class SurveySubmission(BaseModel):
     location: str = Field(..., min_length=2)
     
     # Preferences & Problems
+    perfumeQuality: str  # NEW: تركيبة أو أورجينال
     favoritePerfumes: str = Field(..., min_length=3)
     purchaseFrequency: str
     mainProblem: str = Field(..., min_length=10)

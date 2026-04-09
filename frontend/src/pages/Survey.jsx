@@ -41,7 +41,7 @@ const Survey = () => {
     {
       id: 'personal',
       title: 'معلوماتك الشخصية',
-      subtitle: 'نحتاج بعض المعلومات للتواصل معك',
+      subtitle: 'بدنا شوي معلومات للتواصل معك',
       fields: [
         { name: 'name', label: 'الاسم الكامل', type: 'text', required: true, placeholder: 'أدخل اسمك' },
         { name: 'phone', label: 'رقم الموبايل', type: 'tel', required: true, placeholder: '+963 XXX XXX XXX' },
@@ -53,12 +53,24 @@ const Survey = () => {
     {
       id: 'gender',
       title: 'الجنس',
-      subtitle: 'لنقدم لك تجربة مخصصة',
+      subtitle: 'مشان نقدملك تجربة مخصصة',
       type: 'radio',
       name: 'gender',
       options: [
         { value: 'male', label: 'ذكر' },
         { value: 'female', label: 'أنثى' }
+      ]
+    },
+    {
+      id: 'quality',
+      title: 'نوع العطر يلي بتشتريه',
+      subtitle: 'بتفضل تركيبات ولا أورجينال؟',
+      type: 'radio',
+      name: 'perfumeQuality',
+      options: [
+        { value: 'original', label: 'أورجينال (Original)' },
+        { value: 'tarkib', label: 'تركيبات' },
+        { value: 'both', label: 'الاثنين' }
       ]
     },
     {
@@ -71,8 +83,8 @@ const Survey = () => {
     },
     {
       id: 'frequency',
-      title: 'كم مرة تشتري عطر؟',
-      subtitle: 'نبغى نعرف عاداتك الشرائية',
+      title: 'كم مرة بتشتري عطر؟',
+      subtitle: 'بدنا نعرف عاداتك الشرائية',
       type: 'radio',
       name: 'purchaseFrequency',
       options: [
@@ -85,7 +97,7 @@ const Survey = () => {
     },
     {
       id: 'problems',
-      title: 'المشاكل التي تواجهك',
+      title: 'المشاكل يلي بتواجهك',
       subtitle: 'شو أكتر شي بيزعجك لما تشتري عطر؟',
       fields: [
         { name: 'mainProblem', label: 'المشكلة الأساسية', type: 'textarea', required: true, placeholder: 'مثلاً: العطر ما بيدوم، السعر غالي، صعب أعرف شو يناسبني...' }
@@ -94,10 +106,17 @@ const Survey = () => {
     {
       id: 'price',
       title: 'الميزانية',
-      subtitle: 'شو الميزانية يلي مستعد تدفعها لعطر فاخر؟',
+      subtitle: formData.perfumeQuality === 'tarkib' 
+        ? 'شو الميزانية يلي مستعد تدفعها لتركيبة عطر؟'
+        : 'شو الميزانية يلي مستعد تدفعها لعطر فاخر؟',
       type: 'radio',
       name: 'priceRange',
-      options: [
+      options: formData.perfumeQuality === 'tarkib' ? [
+        { value: 'under100k', label: 'أقل من 100 ألف ليرة سورية' },
+        { value: '100k-250k', label: 'بين 100 و 250 ألف ليرة' },
+        { value: '250k-500k', label: 'بين 250 و 500 ألف ليرة' },
+        { value: 'over500k', label: 'أكثر من 500 ألف ليرة' }
+      ] : [
         { value: 'under50', label: 'أقل من 50 دولار' },
         { value: '50-100', label: '50-100 دولار' },
         { value: '100-200', label: '100-200 دولار' },
@@ -114,12 +133,12 @@ const Survey = () => {
         { value: 'oriental', label: 'عطور شرقية قوية' },
         { value: 'western', label: 'عطور غربية خفيفة' },
         { value: 'mixed', label: 'المزيج بين الاثنين' },
-        { value: 'not-sure', label: 'مش متأكد' }
+        { value: 'other', label: 'غيره' }
       ]
     },
     {
       id: 'discovery',
-      title: 'كيف تكتشف العطور الجديدة؟',
+      title: 'كيف بتكتشف العطور الجديدة؟',
       subtitle: 'من وين بتسمع عن العطور الجديدة؟',
       type: 'radio',
       name: 'discoveryMethod',
@@ -256,9 +275,16 @@ const Survey = () => {
                   {discountCode}
                 </p>
               </div>
-              <div className="flex items-center justify-center gap-2 text-white/90 text-lg font-cairo">
+              <div className="flex items-center justify-center gap-2 text-white/90 text-lg font-cairo mb-4">
                 <CheckCircle2 className="w-5 h-5" />
                 <span>خصم 20% على أول عملية شراء</span>
+              </div>
+              <div className="bg-white/10 rounded-lg p-4 mt-4">
+                <p className="text-white/90 text-sm font-cairo leading-relaxed">
+                  <strong>شكراً على وقتك وجهدك! 🙏</strong><br/>
+                  رأيك مهم كتير بالنسبة إلنا ورح يساعدنا نقدملك أفضل تجربة.<br/>
+                  نحنا ممتنين لمشاركتك وثقتك فينا.
+                </p>
               </div>
             </div>
 
