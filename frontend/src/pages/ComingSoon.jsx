@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Instagram, Facebook, MessageCircle } from 'lucide-react';
+import { Instagram, Facebook, MessageCircle, Mail, Phone } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 
@@ -158,19 +158,45 @@ const ComingSoon = () => {
             >
               <MessageCircle className="w-6 h-6 text-[#2b0c10] group-hover:text-white transition-colors duration-500" />
             </a>
+
+            <a
+              href="mailto:contact@rouh.shop"
+              className="group relative p-4 rounded-xl bg-white/80 backdrop-blur-sm border-2 border-[#2b0c10]/30 hover:border-[#bb8d4f] hover:bg-gradient-to-br hover:from-[#2b0c10] hover:to-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
+              aria-label="Email"
+            >
+              <Mail className="w-6 h-6 text-[#2b0c10] group-hover:text-white transition-colors duration-500" />
+            </a>
+
+            <a
+              href="tel:+963933898625"
+              className="group relative p-4 rounded-xl bg-white/80 backdrop-blur-sm border-2 border-[#2b0c10]/30 hover:border-[#bb8d4f] hover:bg-gradient-to-br hover:from-[#2b0c10] hover:to-[#bb8d4f] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-110 transform"
+              aria-label="Phone"
+            >
+              <Phone className="w-6 h-6 text-[#2b0c10] group-hover:text-white transition-colors duration-500" />
+            </a>
           </div>
           
-          {/* WhatsApp Number Display */}
-          <div>
-            <a 
-              href="https://wa.me/963933898625"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#2b0c10] to-[#bb8d4f] text-white font-cairo font-bold hover:from-[#bb8d4f] hover:to-[#d4a574] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/60 hover:scale-105 transform"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span className="text-base md:text-lg" dir="ltr">+963 933 898 625</span>
-            </a>
+          {/* Contact Details */}
+          <div className="space-y-4">
+            <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+              <a 
+                href="https://wa.me/963933898625"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-[#2b0c10] to-[#bb8d4f] text-white font-cairo font-bold hover:from-[#bb8d4f] hover:to-[#d4a574] transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/60 hover:scale-105 transform"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span className="text-base" dir="ltr">+963 933 898 625</span>
+              </a>
+
+              <a 
+                href="mailto:contact@rouh.shop"
+                className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/80 backdrop-blur-sm border-2 border-[#2b0c10] text-[#2b0c10] font-cairo font-bold hover:bg-gradient-to-r hover:from-[#2b0c10] hover:to-[#bb8d4f] hover:text-white transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-[#bb8d4f]/40 hover:scale-105 transform"
+              >
+                <Mail className="w-5 h-5" />
+                <span className="text-base" dir="ltr">contact@rouh.shop</span>
+              </a>
+            </div>
           </div>
         </div>
 
