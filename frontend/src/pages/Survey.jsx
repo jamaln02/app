@@ -133,8 +133,17 @@ const Survey = () => {
         { value: 'oriental', label: 'عطور شرقية قوية' },
         { value: 'western', label: 'عطور غربية خفيفة' },
         { value: 'mixed', label: 'المزيج بين الاثنين' },
-        { value: 'other', label: 'غيره' }
+        { value: 'other', label: 'غير ذلك' }
       ]
+    },
+    {
+      id: 'type-other',
+      title: 'شو نوع العطر يلي بتفضلو؟',
+      subtitle: 'احكيلنا أكتر عن تفضيلاتك',
+      fields: [
+        { name: 'perfumeTypeOther', label: 'نوع العطر', type: 'textarea', required: true, placeholder: 'مثلاً: عطور فواكه، عطور خشبية، عطور ورد...' }
+      ],
+      skipIf: () => formData.perfumeType !== 'other'
     },
     {
       id: 'discovery',
@@ -160,8 +169,10 @@ const Survey = () => {
     }
   ];
 
-  const currentQuestion = questions[currentStep];
-  const isLastStep = currentStep === questions.length - 1;
+  // Filter out questions based on skipIf condition
+  const filteredQuestions = questions.filter(q => !q.skipIf || !q.skipIf());
+  const currentQuestion = filteredQuestions[currentStep];
+  const isLastStep = currentStep === filteredQuestions.length - 1;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -248,7 +259,7 @@ const Survey = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const progress = ((currentStep + 1) / questions.length) * 100;
+  const progress = ((currentStep + 1) / filteredQuestions.length) * 100;
 
   // Success Page
   if (discountCode) {
@@ -349,7 +360,7 @@ const Survey = () => {
         <div className="mb-8">
           <div className="flex justify-between items-center mb-2">
             <span className="text-sm text-[#2b0c10]/60 font-cairo">
-              السؤال {currentStep + 1} من {questions.length}
+              السؤال {currentStep + 1} من {filteredQuestions.length}
             </span>
             <span className="text-sm text-[#2b0c10]/60 font-cairo">
               {Math.round(progress)}%
@@ -384,7 +395,7 @@ const Survey = () => {
               {currentQuestion.options.map((option) => (
                 <div
                   key={option.value}
-                  className="flex items-center space-x-3 space-x-reverse p-4 rounded-xl border-2 border-[#bb8d4f]/20 hover:border-[#bb8d4f] hover:bg-[#bb8d4f]/5 transition-all cursor-pointer"
+                  className="flex items-center gap-3 p-4 rounded-xl border-2 border-[#bb8d4f]/20 hover:border-[#bb8d4f] hover:bg-[#bb8d4f]/5 transition-all cursor-pointer"
                   onClick={() => handleRadioChange(currentQuestion.name, option.value)}
                 >
                   <RadioGroupItem value={option.value} id={option.value} />
@@ -433,8 +444,18 @@ const Survey = () => {
 
           {/* Error Message */}
           {error && (
-            <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl">
-              <p className="text-red-600 text-sm font-cairo">{error}</p>
+            <div className={`mt-4 p-4 rounded-xl ${
+              error.includes('حصل على الخصم مسبقاً') 
+                ? 'bg-blue-50 border border-blue-200' 
+                : 'bg-red-50 border border-red-200'
+            }`}>
+              <p className={`text-sm font-cairo ${
+                error.includes('حصل على الخصم مسبقاً')
+                  ? 'text-blue-700'
+                  : 'text-red-600'
+              }`}>
+                {error}
+              </p>
             </div>
           )}
 

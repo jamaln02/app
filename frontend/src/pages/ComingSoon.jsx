@@ -113,15 +113,11 @@ const ComingSoon = () => {
         <div className="mb-12 animate-fadeIn" style={{ animationDelay: '0.45s' }}>
           <Button
             onClick={() => navigate('/survey')}
-            className="px-10 py-6 text-lg md:text-xl font-bold bg-gradient-to-r from-[#2b0c10] via-[#bb8d4f] to-[#2b0c10] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white rounded-full shadow-2xl hover:shadow-[#bb8d4f]/60 transition-all duration-500 hover:scale-105 transform font-cairo animate-pulse"
-            style={{
-              backgroundSize: '200% 100%',
-              backgroundPosition: '0% 0%'
-            }}
+            className="px-10 py-6 text-lg md:text-xl font-bold bg-white text-[#2b0c10] border-4 border-[#bb8d4f] hover:bg-[#bb8d4f] hover:text-white hover:border-[#2b0c10] rounded-full shadow-2xl hover:shadow-[#bb8d4f]/60 transition-all duration-500 hover:scale-105 transform font-cairo"
           >
             🎁 {t.surveyButton}
           </Button>
-          <p className="text-[#2b0c10]/60 text-sm mt-3 font-cairo">
+          <p className="text-[#2b0c10]/70 text-sm md:text-base mt-4 font-cairo font-semibold">
             {language === 'ar' ? 'أجب على أسئلة بسيطة واحصل على خصم حصري' : 'Answer simple questions and get exclusive discount'}
           </p>
         </div>
