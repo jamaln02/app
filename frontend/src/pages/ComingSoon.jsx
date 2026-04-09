@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Instagram, Facebook, MessageCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 
 const ComingSoon = () => {
+  const navigate = useNavigate();
   const [language, setLanguage] = useState('ar');
 
   const content = {
@@ -10,13 +12,15 @@ const ComingSoon = () => {
       comingSoon: 'قريباً',
       subtitle: 'عالم من العطور الفاخرة',
       description: 'نحن نعمل على إطلاق تجربة استثنائية في عالم العطور الفاخرة. عطور تحكي قصة روحك وتعكس أناقتك وتميزك.',
-      stayConnected: 'تواصل معنا'
+      stayConnected: 'تواصل معنا',
+      surveyButton: 'احصل على خصم 20%'
     },
     en: {
       comingSoon: 'Coming Soon',
       subtitle: 'A World of Luxury Fragrances',
       description: 'We are crafting an extraordinary experience in the world of luxury perfumes. Fragrances that tell your soul\'s story and reflect your elegance and uniqueness.',
-      stayConnected: 'Stay Connected'
+      stayConnected: 'Stay Connected',
+      surveyButton: 'Get 20% Discount'
     }
   };
 
@@ -103,6 +107,23 @@ const ComingSoon = () => {
           <div className="w-2 h-2 rounded-full bg-[#bb8d4f]"></div>
           <div className="w-1.5 h-1.5 rounded-full bg-[#bb8d4f]/60"></div>
           <div className="w-20 h-px bg-gradient-to-l from-transparent to-[#bb8d4f]/60"></div>
+        </div>
+
+        {/* Survey CTA Button */}
+        <div className="mb-12 animate-fadeIn" style={{ animationDelay: '0.45s' }}>
+          <Button
+            onClick={() => navigate('/survey')}
+            className="px-10 py-6 text-lg md:text-xl font-bold bg-gradient-to-r from-[#2b0c10] via-[#bb8d4f] to-[#2b0c10] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white rounded-full shadow-2xl hover:shadow-[#bb8d4f]/60 transition-all duration-500 hover:scale-105 transform font-cairo animate-pulse"
+            style={{
+              backgroundSize: '200% 100%',
+              backgroundPosition: '0% 0%'
+            }}
+          >
+            🎁 {t.surveyButton}
+          </Button>
+          <p className="text-[#2b0c10]/60 text-sm mt-3 font-cairo">
+            {language === 'ar' ? 'أجب على أسئلة بسيطة واحصل على خصم حصري' : 'Answer simple questions and get exclusive discount'}
+          </p>
         </div>
 
         {/* Contact & Social Media */}

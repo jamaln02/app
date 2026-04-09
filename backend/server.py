@@ -10,6 +10,9 @@ from typing import List
 import uuid
 from datetime import datetime, timezone
 
+# Import survey routes
+from routes import survey
+
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -65,6 +68,12 @@ async def get_status_checks():
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
     
     return status_checks
+
+# Set DB for survey routes
+survey.set_db(db)
+
+# Include survey routes
+api_router.include_router(survey.router, prefix="/survey", tags=["survey"])
 
 # Include the router in the main app
 app.include_router(api_router)
