@@ -11,14 +11,14 @@ const ComingSoon = () => {
     ar: {
       comingSoon: 'قريباً',
       subtitle: 'عالم من العطور الفاخرة',
-      description: 'نحن نعمل على إطلاق تجربة استثنائية في عالم العطور الفاخرة. عطور تحكي قصة روحك وتعكس أناقتك وتميزك.',
+      description: 'نحن نعمل على إطلاق تجربة استثنائية في عالم العطور الفاخرة، عطور تحكي قصة روحك وتعكس أناقتك وتميزك.',
       stayConnected: 'تواصل معنا',
       surveyButton: 'احصل على خصم 20%'
     },
     en: {
       comingSoon: 'Coming Soon',
       subtitle: 'A World of Luxury Fragrances',
-      description: 'We are crafting an extraordinary experience in the world of luxury perfumes. Fragrances that tell your soul\'s story and reflect your elegance and uniqueness.',
+      description: 'We are crafting an extraordinary experience in the world of luxury perfumes, fragrances that tell your soul\'s story and reflect your elegance and uniqueness.',
       stayConnected: 'Stay Connected',
       surveyButton: 'Get 20% Discount'
     }
