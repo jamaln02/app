@@ -28,11 +28,13 @@ const Survey = () => {
     location: '',
     
     // Preferences & Problems
+    perfumeQuality: '',
     favoritePerfumes: '',
     purchaseFrequency: '',
     mainProblem: '',
     priceRange: '',
     perfumeType: '',
+    perfumeTypeOther: '',
     discoveryMethod: '',
     wishList: ''
   });
@@ -186,7 +188,7 @@ const Survey = () => {
   };
 
   const validateStep = () => {
-    const question = questions[currentStep];
+    const question = filteredQuestions[currentStep];
     
     if (question.type === 'radio') {
       if (!formData[question.name]) {
@@ -234,7 +236,13 @@ const Survey = () => {
     setError('');
     
     try {
-      const response = await axios.post(`${BACKEND_URL}/api/survey/submit`, formData);
+      // Prepare payload with age as number
+      const payload = {
+        ...formData,
+        age: parseInt(formData.age, 10)
+      };
+      
+      const response = await axios.post(`${BACKEND_URL}/api/survey/submit`, payload);
       
       if (response.data.success) {
         setDiscountCode(response.data.discountCode);
